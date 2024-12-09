@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flavors</title>
+</head>
+<body>
+    <h1>Flavors</h1>
+    <form method="GET">
+        <label for="query">Search:</label>
+        <input type="text" id="query" name="query" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor[1] }} - {{ "Seasonal" if flavor[2] else "Regular" }} (Allergens: {{ flavor[3] }})</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
